@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+      <h2></h2>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images\dice1.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images\dice2.png">
+      </div>
+
+    </div>
+    <script>
+     var player1= Math.floor(7*Math.random());
+     if (player1 == 0){
+     player1 =1;}
+     var player2=Math.floor(7*Math.random());
+     if (player2 == 0){
+     player2 =1;}
+     var doc= document;
+     var str1 ="images\\dice" + player1 + ".png";
+     var str2= "images\\dice" + player2 +".png";
+     doc.querySelector(".img2").setAttribute("src", str2);
+     doc.querySelector(".img1").setAttribute("src", str1);
+     if( player1 == player2)
+     {
+       doc.querySelector("h2").textContent = "Tie Up ! :( ";
+     }
+     else if (player1 > player2)
+     {
+       doc.querySelector("h2").textContent ="Player 1 Won ! :)" ;
+     }
+     else  if(player2>player1){
+       doc.querySelector("h2").textContent ="Player 2 Won ! :)" ;
+     }
+     //alert(player1);
+    </script>
+
+  </body>
+
+  <footer>
+    Made by: Aditya Mishra
+  </footer>
+
+</html>
